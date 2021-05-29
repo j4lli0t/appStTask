@@ -1,13 +1,12 @@
 package ApplaudoStudios.Pages;
 
-import ApplaudoStudios.utils.Wrappers;
+import ApplaudoStudios.Utils.Wrappers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Properties;
 
 public class IndexPage
 {
@@ -26,7 +25,7 @@ public class IndexPage
     private final By continueShoppingButton = By.xpath("//span[@title='Continue shopping']");
     private final By cartProducts = By.xpath("//a[@title='View my shopping cart']");
     private final By deleteButton = By.xpath("//a[@class='cart_quantity_delete']");
-    private final By storeInformationLabel = By.xpath("//h4[text()='Store information']");
+    private final By storeInformationLabel = By.xpath("//h4[text()='Store information']/following::ul//li");
 
     /*Initialize Driver*/
     public IndexPage(WebDriver driver)
@@ -81,10 +80,10 @@ public class IndexPage
         return false;
     }
 
-    public Boolean checkInformation(String[] text)
+    public Boolean checkFooterInformation(String[] text)
     {
         Boolean flag = false;
-        List<WebElement> elements = driver.findElements(By.xpath("//h4[text()='Store information']/following::ul//li"));
+        List<WebElement> elements = driver.findElements(storeInformationLabel);
         element.goToFooter();
         for(int i = 0; i < elements.size(); i++)
         {

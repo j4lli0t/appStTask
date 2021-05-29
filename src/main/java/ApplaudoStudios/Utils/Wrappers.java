@@ -1,4 +1,4 @@
-package ApplaudoStudios.utils;
+package ApplaudoStudios.Utils;
 
 import java.time.Duration;
 import java.util.ArrayList;

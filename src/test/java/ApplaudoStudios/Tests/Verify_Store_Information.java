@@ -9,7 +9,7 @@ public class Verify_Store_Information extends BaseTest
     public void verifyInformation()
     {
         String[] constraints = {properties.getProperty("street"),properties.getProperty("phone"),properties.getProperty("emailed")};
-        softAssert.assertTrue(indexPage.checkInformation(constraints));
+        softAssert.assertTrue(indexPage.checkFooterInformation(constraints));
         softAssert.assertAll();
     }
 }
