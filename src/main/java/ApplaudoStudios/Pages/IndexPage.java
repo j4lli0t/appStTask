@@ -80,8 +80,7 @@ public class IndexPage
         return false;
     }
 
-    public Boolean checkFooterInformation(String[] text)
-    {
+    public Boolean checkFooterInformation(String[] text) throws InterruptedException {
         Boolean flag = false;
         List<WebElement> elements = driver.findElements(storeInformationLabel);
         element.goToFooter();
@@ -95,6 +94,7 @@ public class IndexPage
                 break;
             }
         }
+        Thread.sleep(3000);
         return flag;
     }
 }

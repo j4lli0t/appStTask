@@ -6,8 +6,7 @@ import org.testng.annotations.Test;
 public class Verify_Store_Information extends BaseTest
 {
     @Test(description = "Verify Store Information")
-    public void verifyInformation()
-    {
+    public void verifyInformation() throws InterruptedException {
         String[] constraints = {properties.getProperty("street"),properties.getProperty("phone"),properties.getProperty("emailed")};
         softAssert.assertTrue(indexPage.checkFooterInformation(constraints));
         softAssert.assertAll();
