@@ -71,9 +71,9 @@ public class IndexPage
         {
             String attribute = driver.findElement(By.xpath("//table[@id='cart_summary']//a[text()='"+item+"']/ancestor::tr")).getAttribute("id");
             System.out.println(attribute);
-            Thread.sleep(2000);
             attribute = attribute.replace("product_", "");
             element.doClickELementBySpecificId(deleteButton,attribute);
+            Thread.sleep(5000);
             return true;
         }
         System.out.println("Element is not found!");
