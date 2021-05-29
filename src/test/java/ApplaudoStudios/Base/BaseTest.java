@@ -3,6 +3,7 @@ package ApplaudoStudios.Base;
 import ApplaudoStudios.Factory.DriverFactory;
 import ApplaudoStudios.Pages.IndexPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
