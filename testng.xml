@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/home/anderson/IdeaProjects/appStTask"><classes><class name="ApplaudoStudios.Tests.TC_Add_Delete_Items"><methods><include name="addItemToCart"/><include name="deleteItemFromCart"/></methods></class><class name="ApplaudoStudios.Tests.Verify_Store_Information"><methods><include name="verifyInformation"/></methods></class></classes></test></suite>
