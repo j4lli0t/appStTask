@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class DriverFactory
@@ -15,8 +16,12 @@ public class DriverFactory
     private Properties properties;
     private OptionsManager optionsManager;
     public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private InputStream file;
 
-
+    public DriverFactory()
+    {
+        this.file = DriverFactory.class.getResourceAsStream("/config.properties");
+    }
     public WebDriver initDriver(Properties properties)
     {
         optionsManager = new OptionsManager(properties);
@@ -40,11 +45,10 @@ public class DriverFactory
     }
 
     public Properties initProperties() throws FileNotFoundException {
-        FileInputStream file = new FileInputStream("src/test/java/ApplaudoStudios/Resources/config.properties");
         properties = new Properties();
         try
         {
-            properties.load(file);
+            properties.load(this.file);
         }catch (FileNotFoundException error)
         {
             System.out.println("File not found");

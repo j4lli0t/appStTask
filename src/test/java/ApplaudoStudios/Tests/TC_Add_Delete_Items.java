@@ -2,13 +2,12 @@ package ApplaudoStudios.Tests;
 
 import ApplaudoStudios.Base.BaseTest;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class TC_Add_Delete_Items extends BaseTest
 {
 
     @Test(description = "Add item to shopping cart")
-    public void addItemToCart() throws InterruptedException
+    public void addItemToCart() throws Exception
     {
         indexPage.clickSingInButton();
         indexPage.doLogin(properties.getProperty("username"),properties.getProperty("passwd"));
